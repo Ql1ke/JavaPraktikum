@@ -1,9 +1,6 @@
-import com.sun.tools.javac.Main;
-import org.junit.Before;
+import com.codeborne.selenide.SelenideElement;
 import org.junit.Test;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
 
 public class MainPageQuestions {
@@ -18,19 +15,8 @@ public class MainPageQuestions {
     public void test() {
 
         MainPage mainPage = open("https://qa-scooter.praktikum-services.ru/", MainPage.class);
-
-
-        /*String countAccordion = mainPage.koko(0);
-        System.out.println(countAccordion);*/
-
-//        MainPage countAccordion = mainPage.getCollectionStringQuestion(0);
-//        Integer countAccordion = $$(byClassName("accordion__button")).size();
-//        System.out.println(countAccordion);
-
         MainPage countAccordion = mainPage.getCollectionStringQuestion(0);
-        MainPage textOne = mainPage.text();
-        System.out.println(textOne);
-
+        SelenideElement textOne = mainPage.assertTextFirstQuestion();
 
     }
 }
