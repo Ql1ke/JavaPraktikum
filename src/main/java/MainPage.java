@@ -43,7 +43,7 @@ public class MainPage {
     @FindBy(how = How.XPATH, using = "//div[text()='Курьер забирает самокат']")
     private SelenideElement elementCourierScooterTake;
     //кнопка "заказать" самокат в описании работы сервиса
-    @FindBy(how = How.XPATH, using = "//div[@class='Home_FinishButton__1_cWm']/button[@class='Button_Button__ra12g Button_UltraBig__UU3Lp']")
+    @FindBy(how = How.XPATH, using = "//div[@class='Home_FinishButton__1_cWm']/button[text() = 'Заказать']")
     private SelenideElement footerOrderButton;
 
     public OrderPage clickHeaderOrderButton() {
@@ -54,11 +54,11 @@ public class MainPage {
         orderPage.waitForLoadOrderPage();
         //  возвращаю экземпляр класса страницы заказа
         return orderPage;
-
     }
 
-    public void clickFooterOrderButton () {
-        footerOrderButton.click();
+    public OrderPage clickFooterOrderButton() {
+        footerOrderButton.scrollTo().click();
+        return page(OrderPage.class);
     }
 
     //Cookies
@@ -69,6 +69,11 @@ public class MainPage {
     @FindBy(how = How.ID, using = "rcc-confirm-button")
     private SelenideElement cookiesButton;
 
+    //метод нажать на кнопку куки
+    public MainPage clickCookiesButton() {
+        cookiesButton.click();
+        return this;
+    }
 
     //Элементы для тестов сравнениея полученного текста с эталонным
     //Элемент Вопросы о важном
@@ -76,7 +81,7 @@ public class MainPage {
     private SelenideElement elementFAQ;
     //Коллекция строк-элементов FAQ
     @FindBy(how = How.CLASS_NAME, using = "accordion__button")
-    private ElementsCollection  collectionStringQuestion;
+    private ElementsCollection collectionStringQuestion;
 
     //Текст ответа на первый вопрос
     @FindBy(how = How.XPATH, using = ".//div[@aria-labelledby='accordion__heading-0']")
@@ -123,31 +128,38 @@ public class MainPage {
     //Сравнить текст в первом ответе FAQ с эталонным
     public SelenideElement getAssertTextFirstQuestion() {
         return answerTextFirstQuestion.shouldHave(exactText(FIRST_ANSWER));
-        }
+    }
+
     //Сравнить текст во втором ответе FAQ с эталоном
     public SelenideElement getAssertTextSecondQuestion() {
         return answerTextSecondQuestion.shouldHave(exactText(SECOND_ANSWER));
     }
+
     //Сравнить текст в 3-v ответе FAQ с эталоном
     public SelenideElement getAssertTextThirdQuestion() {
         return answerTextThirdQuestion.shouldHave(exactText(THIRD_ANSWER));
     }
+
     //Сравнить текст в 4-м ответе FAQ с эталоном
     public SelenideElement getAssertTextFourthQuestion() {
         return answerTextFourthQuestion.shouldHave(exactText(FOURTH_ANSWER));
     }
+
     //Сравнить текст в 5-и ответе FAQ с эталоном
     public SelenideElement getAssertTextFifthQuestion() {
         return answerTextFifthQuestion.shouldHave(exactText(FIFTH_ANSWER));
     }
+
     //Сравнить текст в 6-м ответе FAQ с эталоном
     public SelenideElement getAssertTextSixthQuestion() {
         return answerTextSixthQuestion.shouldHave(exactText(SIXTH_ANSWER));
     }
+
     //Сравнить текст в 7-м ответе FAQ с эталоном
     public SelenideElement getAssertTextSeventhQuestion() {
         return answerTextSeventhQuestion.shouldHave(exactText(SEVEN_ANSWER));
     }
+
     //Сравнить текст в 8-м овтете FAQ с эталоном
     public SelenideElement getAssertTextEighthQuestion() {
         return answerTextEighthQuestion.shouldHave(exactText(EIGTH_ANSWER));

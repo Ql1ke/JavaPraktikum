@@ -13,7 +13,7 @@ public class MainPageQuestions {
 
     @Before
     public void setBrowser() {
-      open(URL);
+        open(URL);
     }
 
     @Test //Открыть первую строку FAQ и сравнить текст с эталонным
@@ -36,8 +36,8 @@ public class MainPageQuestions {
 
     @Test //Открыть 4-ю строку FAQ и сравнить текст с эталоном
     public void testFourth() {
-       mainPage.clickCollectionStringQuestion(3);
-       mainPage.getAssertTextFourthQuestion();
+        mainPage.clickCollectionStringQuestion(3);
+        mainPage.getAssertTextFourthQuestion();
     }
 
     @Test //Открыть 5-ю строку FAQ и сравнить текст с эталоном
