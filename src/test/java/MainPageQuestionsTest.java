@@ -5,7 +5,7 @@ import org.junit.Test;
 
 import static com.codeborne.selenide.Selenide.*;
 
-public class MainPageQuestions {
+public class MainPageQuestionsTest {
 
     MainPage mainPage = page(MainPage.class);
     private final String URL = "https://qa-scooter.praktikum-services.ru/";

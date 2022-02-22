@@ -4,7 +4,7 @@ import org.junit.Test;;
 import static com.codeborne.selenide.Selenide.*;
 import static org.junit.Assert.assertTrue;
 
-public class OrderPageFields {
+public class OrderPageFieldsTest {
 
     private final String URL = "https://qa-scooter.praktikum-services.ru/";
     //Тестовый набор данных №1
@@ -32,9 +32,9 @@ public class OrderPageFields {
     @Before
     public void setBrowser() {
         //Вызов браузера safari
-        System.setProperty("selenide.browser", "safari");
+//        System.setProperty("selenide.browser", "safari");
         //Вызов браузера chrome
-//        System.setProperty("selenide.browser", "chrome");
+        System.setProperty("selenide.browser", "chrome");
         open(URL);
     }
 

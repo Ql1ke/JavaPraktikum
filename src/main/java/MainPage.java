@@ -26,22 +26,82 @@ public class MainPage {
     @FindBy(how = How.XPATH, using = "//div[@class='Input_InputContainer__3NykH']/button[text()='Go!']")
     private SelenideElement orderSearchButton;
 
+    //Элементы характеристик самоката
+    //изображение самоката
+    @FindBy(how = How.CSS, using = "[alt='Scooter blueprint']")
+    private SelenideElement imgScooter;
+    //Элемент текста "Самокат на пару дней"
+    @FindBy(how = How.XPATH, using = "//div[@class='Home_FirstPart__3g6vG']/div[text()='Самокат ']")
+    private SelenideElement textDescriptionScooter;
+    //Элемент описания куда привезут самокат
+    @FindBy(how = How.XPATH, using = "//div[@class='Home_FirstPart__3g6vG']/div[text()='Привезём его прямо к вашей двери,']")
+    private SelenideElement textDeliveryDescriptionScooter;
+    //Элемент описания как ехать на самокате
+    @FindBy(how = How.XPATH, using = "//div[@class='Home_FirstPart__3g6vG']/div[text()='Он лёгкий и с мощными колёсами— самое то, чтобы ехать по набережной и нежно барабанить пальцами по рулю']")
+    private SelenideElement textDriveDescriptionScooter;
+    //Элемент описания модели самрката
+    @FindBy(how = How.XPATH, using = "//div[@class='Home_Column__xlKDK']/div[text()=' Модель Toxic PRO']")
+    private SelenideElement textDescriptionModelScooter;
+    //Элемент с какой максмимальной скоростью едет самокат
+    @FindBy(how = How.XPATH, using = "//div[@class='Home_Row__jdQW2 Home_FirstRow__1pAl9']/div[text()='Максимальная скорость']")
+    private SelenideElement textDescriptionSpecSpeedScooter;
+    //Элемент с какой скоростью едет самокат в км/ч
+    @FindBy(how = How.XPATH, using = "//div[@class='Home_Row__jdQW2 Home_FirstRow__1pAl9']/div[text()='40 км/ч']")
+    private SelenideElement textDescriptionSpecSpeedNumberScooter;
+    //Элемент сколько проедет самокат
+    @FindBy(how = How.XPATH, using = "//div[@class='Home_Row__jdQW2']/div[text()='Проедет без поздарядки']")
+    private SelenideElement textDescriptionSpecDistanceScooter;
+    //Элемент сколько проедет самокат в км
+    @FindBy(how = How.XPATH, using = "//div[@class='Home_Row__jdQW2']/div[text()='80 км']")
+    private SelenideElement textDescriptionSpecDistanceNumberScooter;
+    //Элемент сколько выдержит самокат
+    @FindBy(how = How.XPATH, using = "//div[@class='Home_Row__jdQW2']/div[text()='Выдерживает вес']")
+    private SelenideElement textDescriptionSpecWeightScooter;
+    //Элемент сколько выдержит самокат в кг
+    @FindBy(how = How.XPATH, using = "//div[@class='Home_Row__jdQW2']/div[text()='120 кг']")
+    private SelenideElement textDescriptionSpecWeightNumberScooter;
+
     //Элементы этапов работы сервиса
     //Элемент дорожной карты "Как это работает"
     @FindBy(how = How.CLASS_NAME, using = "Home_SubHeader__zwi_E")
     private SelenideElement subHeaderRoadMap;
-    //Элемент Заказываете самокат
+    //Элемент "Заказываете самокат"
     @FindBy(how = How.XPATH, using = "//div[text()='Заказываете самокат']")
     private SelenideElement elementOrderScooter;
-    //Элемент Курьер привозит самокат
+    //Элемент описания "Заказываете самокат"
+    @FindBy(how = How.XPATH, using = "//div[text()='Выбираете, когда и куда привезти']")
+    private SelenideElement elementDescriptionOneOrderScooter;
+    //Элемент кружка с 1-м этапом заказа самоката
+    @FindBy(how = How.XPATH, using = "//div[text()='1']")
+    private SelenideElement elementCircleOneOrderScooter;
+    //Элемент "Курьер привозит самокат"
     @FindBy(how = How.XPATH, using = "//div[text()='Курьер привозит самокат']")
     private SelenideElement elementCourierScooterGive;
-    //Элемент Катаетесь
+    //Элемент описания "Курьер привозит самокат"
+    @FindBy(how = How.XPATH, using = "//div[text()='А вы — оплачиваете аренду']")
+    private SelenideElement elementDescriptionTwoOrderScooter;
+    //Элемент кружка со 2-м этапом заказа самоката
+    @FindBy(how = How.XPATH, using = "//div[text()='2']")
+    private SelenideElement elementCircleTwoOrderScooter;
+    //Элемент "Катаетесь"
     @FindBy(how = How.XPATH, using = "//div[text()='Катаетесь']")
     private SelenideElement elementRiding;
-    //элемент Курьер забирает самокат
+    //Элемент описания "Катаетесь"
+    @FindBy(how = How.XPATH, using = "//div[text()='Сколько часов аренды осталось — видно на сайте']")
+    private SelenideElement elementDescriptionThreeOrderScooter;
+    //Элемент кружка с 3-м этапом заказа самоката
+    @FindBy(how = How.XPATH, using = "//div[text()='3']")
+    private SelenideElement elementCircleThreeOrderScooter;
+    //Элемент "Курьер забирает самокат"
     @FindBy(how = How.XPATH, using = "//div[text()='Курьер забирает самокат']")
     private SelenideElement elementCourierScooterTake;
+    //Элемент описания "Курьер забирает самокат"
+    @FindBy(how = How.XPATH, using = "//div[text()='Когда аренда заканчивается']")
+    private SelenideElement elementDescriptionFourOrderScooter;
+    //Элемент кружка с 4-м этапом заказа самоката
+    @FindBy(how = How.XPATH, using = "//div[text()='4']")
+    private SelenideElement elementCircleFourOrderScooter;
+
     //кнопка "заказать" самокат в описании работы сервиса
     @FindBy(how = How.XPATH, using = "//div[@class='Home_FinishButton__1_cWm']/button[text() = 'Заказать']")
     private SelenideElement footerOrderButton;
